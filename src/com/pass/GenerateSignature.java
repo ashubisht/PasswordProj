@@ -15,13 +15,13 @@ public class GenerateSignature {
 		try{
 			generateSign.generateSign();
 			LocalDate date = LocalDate.now();
-			generateSign.savePvtKey("G:\\Keys\\Encryption\\Signature"+date.toString());
+			generateSign.saveSignKeys("G:\\Keys\\Encryption\\Signature"+date.toString());
 		}catch(Exception e){
 			System.out.println("Exception occurred while trying to generate keys. "+e.getMessage());
 		}
 	}
 	
-	private void savePvtKey(String path) throws Exception{
+	public void saveSignKeys(String path) throws Exception{
 		genKey.save(path, "signature");
 	}
 
